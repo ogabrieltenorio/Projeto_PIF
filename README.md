@@ -1,4 +1,4 @@
-# Projeto de Programação - CESAR School
+# Joguinho em C - CESAR School
 
 ## 🚀 Integrantes:
 - Gabriel Tenório (@ogabrieltenorio)
