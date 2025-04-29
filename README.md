@@ -12,7 +12,7 @@
 ---
 
 ## 📋 Sobre o Projeto:
-Este projeto foi desenvolvido como parte da disciplina de Programação Imperativa e Funcional. Utilizamos a biblioteca CLI-lib para desenvolver um jogo em C.
+Este projeto foi desenvolvido como parte da disciplina de Programação Imperativa e Funcional. Utilizei a biblioteca CLI-lib para desenvolver um jogo em C.
 
 ---
 
