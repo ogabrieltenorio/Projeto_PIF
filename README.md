@@ -2,7 +2,7 @@
 
 # Birdy Rush - Jogo em C
 
-## 🚀 Integrantes:
+## 🚀 Único Integrante:
 - Gabriel Tenório (@ogabrieltenorio)  
 - Email: gtlt@cesar.school
 
