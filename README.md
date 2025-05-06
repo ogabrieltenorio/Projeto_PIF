@@ -1,6 +1,6 @@
 # É mais que um trabalho para ganhar pontos. É uma arte.
 
-# Birdy Rush - Joguinho em C
+# Birdy Rush - Jogo em C
 
 ## 🚀 Integrantes:
 - Gabriel Tenório (@ogabrieltenorio)  
@@ -46,6 +46,24 @@ Obstáculos verticais com espaços centrais se movem horizontalmente pela tela. 
 
 ---
 
+## 📈 Sistema de Pontuação:
+
+A cada obstáculo ultrapassado com sucesso, o jogador recebe +1 ponto. Para evitar que o mesmo obstáculo gere pontos repetidos, cada um tem um marcador que indica se já foi contado.
+
+A pontuação é exibida em tempo real durante a partida usando a biblioteca CLI-lib.
+
+Além disso, o jogo salva automaticamente o **recorde de maior pontuação (high score)** em um arquivo externo. Esse recorde é carregado no início e atualizado sempre que o jogador bate o valor anterior.
+
+---
+
+## 🎮 Controles:
+
+- **Espaço** – Faz o pássaro subir
+- Se nada for pressionado, o pássaro cai por gravidade
+- O jogo acaba se o pássaro colidir com algum obstáculo ou com o chão
+
+---
+
 ## 💻 Requisitos e Execução:
 
 Para compilar e executar o **Birdy Rush** em Linux ou macOS, siga os passos abaixo:
@@ -66,4 +84,6 @@ make
 
 # 4. Execute o jogo
 ./build/birdy_rush
+```
+
 
