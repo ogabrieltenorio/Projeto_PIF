@@ -1,17 +1,14 @@
-CC = gcc
-CFLAGS = -Iinclude
-SRC = src/main.c
-OBJ = build/main.o
-EXEC = build/game
+CC=gcc
+CFLAGS=-Wall -Wextra -std=c99
+LDFLAGS=-lncurses
+SRC=src/birdy_rush.c
+OUT=build/birdy_rush
 
-all: $(EXEC)
+all: $(OUT)
 
-$(EXEC): $(OBJ)
-	$(CC) $(OBJ) -o $(EXEC)
-
-build/%.o: src/%.c
+$(OUT): $(SRC)
 	mkdir -p build
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(SRC) -o $(OUT) $(LDFLAGS)
 
 clean:
-	rm -rf build/*
+	rm -rf build

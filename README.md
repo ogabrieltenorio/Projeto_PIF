@@ -1,89 +1,118 @@
-# É mais que um trabalho para ganhar pontos. É uma arte.
+# Birdy Rush – Jogo em C
 
-# Birdy Rush - Jogo em C
+**“É mais que um trabalho para ganhar pontos. É uma arte.”**
 
-## 🚀 Único Integrante:
-- Gabriel Tenório (@ogabrieltenorio)  
-- Email: gtlt@cesar.school
+## 👨‍💻 Integrante
+- **Gabriel Tenório** ([@ogabrieltenorio](https://github.com/ogabrieltenorio))  
+- **Email:** gtlt@cesar.school
 
-## 🎓 Disciplina:
-- Programação Imperativa e Funcional - 2025.1
-
-## 🏫 Instituição:
-- CESAR School
+## 🎓 Disciplina
+**Programação Imperativa e Funcional – 2025.1**  
+**Instituição:** CESAR School
 
 ---
 
-## 📋 Sobre o Projeto:
+## 📋 Sobre o Projeto
 
-**Birdy Rush** é um jogo interativo desenvolvido em linguagem C como parte da disciplina de Programação Imperativa e Funcional da CESAR School. Inspirado no clássico Flappy Bird, o jogo simula a gravidade e os obstáculos por onde o jogador precisa passar com precisão e tempo de reação.
+**Birdy Rush** é um jogo interativo desenvolvido em linguagem C como parte da disciplina de Programação Imperativa e Funcional da CESAR School. Inspirado no clássico Flappy Bird, o jogo simula gravidade e obstáculos móveis que o jogador deve evitar com precisão e reflexo.
 
-Neste projeto, foi utilizada a biblioteca **CLI-lib** para lidar com a interface via terminal, tornando o jogo leve e compatível com sistemas baseados em Unix, como Linux e macOS.
-
----
-
-## 🎯 Objetivo:
-
-O objetivo principal do projeto **Birdy Rush** é aplicar os conceitos fundamentais de programação em C, como estruturas de controle, modularização com arquivos `.h` e `.c`, além de integração com bibliotecas externas voltadas à interação por linha de comando (CLI).
+Foi utilizada a biblioteca **ncurses** para criar a interface no terminal, garantindo leveza e compatibilidade com sistemas Unix (Linux e macOS).
 
 ---
 
-## 🛠️ Estrutura do Projeto:
+## 🎯 Objetivo
 
-- `src/` – Arquivos de código-fonte (.c)
-- `include/` – Arquivos de cabeçalho (.h)
-- `build/` – Diretório para os binários gerados
-- `Makefile` – Script para compilar e executar o jogo com facilidade
-- `LICENSE` – Licença de uso (MIT)
+Aplicar na prática os principais conceitos da linguagem C:
 
----
-
-## 🧠 Mecânica do Jogo:
-
-No **Birdy Rush**, o jogador controla um pássaro que sobe ao pressionar a tecla **espaço**. Caso a tecla não seja pressionada, o pássaro desce naturalmente por efeito da gravidade.
-
-Obstáculos verticais com espaços centrais se movem horizontalmente pela tela. O jogador deve passar entre esses tubos sem colidir com eles ou com o solo. Cada obstáculo superado aumenta a pontuação. O jogo termina com qualquer colisão.
+- Estruturas de controle (`if`, `for`, `while`)
+- Modularização com arquivos `.c` e `.h`
+- Ponteiros e structs
+- Manipulação de arquivos
+- Uso da biblioteca `ncurses` para interação via terminal
 
 ---
 
-## 📈 Sistema de Pontuação:
+## 🛠️ Estrutura do Projeto
 
-A cada obstáculo ultrapassado com sucesso, o jogador recebe +1 ponto. Para evitar que o mesmo obstáculo gere pontos repetidos, cada um tem um marcador que indica se já foi contado.
-
-A pontuação é exibida em tempo real durante a partida usando a biblioteca CLI-lib.
-
-Além disso, o jogo salva automaticamente o **recorde de maior pontuação (high score)** em um arquivo externo. Esse recorde é carregado no início e atualizado sempre que o jogador bate o valor anterior.
-
----
-
-## 🎮 Controles:
-
-- **Espaço** – Faz o pássaro subir
-- Se nada for pressionado, o pássaro cai por gravidade
-- O jogo acaba se o pássaro colidir com algum obstáculo ou com o chão
+```
+MaisQueUmTrabalho/
+├── src/           → Código-fonte (.c)
+├── build/         → Binários gerados após compilação
+├── Makefile       → Script para compilar automaticamente
+├── LICENSE        → Licença do projeto (MIT)
+└── README.md      → Este documento
+```
 
 ---
 
-## 💻 Requisitos e Execução:
+## 🧠 Mecânica do Jogo
 
-Para compilar e executar o **Birdy Rush** em Linux ou macOS, siga os passos abaixo:
+- O jogador controla um pássaro que **sobe ao pressionar a tecla espaço**
+- Se nenhuma tecla for pressionada, o pássaro **cai automaticamente** pela gravidade
+- Canos com buracos aparecem e se movem da direita para a esquerda
+- O objetivo é **passar entre os canos** sem colidir
+- O jogo termina se o pássaro:
+  - Bater em um cano
+  - Tocar o chão ou o teto da tela
+
+---
+
+## 📈 Sistema de Pontuação e Ranking
+
+- A cada cano ultrapassado, o jogador recebe **+1 ponto**
+- Cada cano tem uma flag que impede pontuação duplicada
+- O jogo salva o **recorde máximo** em um arquivo externo (`recorde.txt`)
+- Os **5 melhores jogadores** são armazenados e ordenados no arquivo `ranking.txt`, exibido no início e fim da partida
+
+---
+
+## 🎮 Controles
+
+- **Espaço:** faz o pássaro subir
+- **Gravidade:** faz o pássaro cair se nada for pressionado
+- **Game Over:** ocorre ao colidir com obstáculos ou com o chão
+- **Após perder:**
+  - Tecla `s` permite jogar novamente
+  - Qualquer outra tecla encerra o jogo
+
+---
+
+## 💻 Requisitos e Execução
+
+### 1. Instale a biblioteca `ncurses`
+
+**Ubuntu/Debian:**
+```bash
+sudo apt-get install libncurses5-dev libncursesw5-dev
+```
+
+**macOS (Homebrew):**
+```bash
+brew install ncurses
+```
+
+---
+
+### 2. Clone ou acesse o projeto
 
 ```bash
-# 1. Instale a biblioteca ncurses
-# Ubuntu/Debian:
-sudo apt-get install libncurses5-dev libncursesw5-dev
-
-# macOS (com Homebrew):
-brew install ncurses
-
-# 2. Vá até a pasta do projeto
 cd caminho/para/o/projeto
+```
 
-# 3. Compile usando o Makefile
+### 3. Compile com o Makefile
+
+```bash
 make
+```
 
-# 4. Execute o jogo
+### 4. Execute o jogo
+
+```bash
 ./build/birdy_rush
 ```
 
+---
 
+## 📄 Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
